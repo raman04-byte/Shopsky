@@ -63,8 +63,9 @@ class _MyProductState extends State<MyProduct> {
             const DrawerHeader(
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage('assets/shopsky.png',//height : 30, width: 50
-           ),
+                  image: AssetImage(
+                    'assets/shopsky.png', //height : 30, width: 50
+                  ),
                 ),
                 color: Colors.blue,
               ),
@@ -93,22 +94,17 @@ class _MyProductState extends State<MyProduct> {
           ],
         ),
       ),
-
       body: SingleChildScrollView(
         child: Column(
           children: [
             Container(
               padding: const EdgeInsets.only(left: 4, right: 2),
-              child:(
-                  const Text('Description of the product')
-              ),
-
+              child: (const Text('Description of the product')),
             ),
-          const SizedBox(
+            const SizedBox(
               height: 10,
             ),
             CarouselSlider(
-
               height: 180,
               enlargeCenterPage: true,
               autoPlay: true,
@@ -168,18 +164,16 @@ class _MyProductState extends State<MyProduct> {
                     icon: Image.asset('assets/laptop.jpg')),
               ],
             ),
-           const SizedBox(
+            const SizedBox(
               height: 10,
             ),
-
             Container(
               padding: const EdgeInsets.only(left: 4, right: 2),
               child: Row(
-                children: const[
+                children: const [
                   Text('Prize of the product'),
                 ],
               ),
-
             ),
             const SizedBox(
               height: 5,
@@ -187,18 +181,20 @@ class _MyProductState extends State<MyProduct> {
             Container(
               padding: const EdgeInsets.only(left: 4, right: 2),
               child: Row(
-                children: const[
+                children: const [
                   Text('EMI if possible'),
                 ],
               ),
-
             ),
-
+            const SizedBox(
+              height: 5,
+            ),
+            Container(
+              padding: const EdgeInsets.only(left: 4, right: 2),
+            )
           ],
         ),
-
       ),
-
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
