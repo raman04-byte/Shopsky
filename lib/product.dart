@@ -94,89 +94,87 @@ class _MyProductState extends State<MyProduct> {
         ),
       ),
 
-      body: Container(
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              Container(
-                padding: const EdgeInsets.only(left: 4, right: 2),
-                child:(
-                    const Text('Description of the product')
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Container(
+              padding: const EdgeInsets.only(left: 4, right: 2),
+              child:(
+                  const Text('Description of the product')
+              ),
+
+            ),
+          const SizedBox(
+              height: 10,
+            ),
+            CarouselSlider(
+
+              height: 180,
+              enlargeCenterPage: true,
+              autoPlay: true,
+              aspectRatio: 16 / 9,
+              autoPlayCurve: Curves.fastOutSlowIn,
+              enableInfiniteScroll: true,
+              autoPlayAnimationDuration: const Duration(milliseconds: 2500),
+              viewportFraction: 0.8,
+              items: [
+                Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10.0),
+                    image: const DecorationImage(
+                      image: AssetImage('assets/laptop.jpg'),
+                    ),
+                  ),
                 ),
-
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              CarouselSlider(
-
-                height: 180,
-                enlargeCenterPage: true,
-                autoPlay: true,
-                aspectRatio: 16 / 9,
-                autoPlayCurve: Curves.fastOutSlowIn,
-                enableInfiniteScroll: true,
-                autoPlayAnimationDuration: const Duration(milliseconds: 2500),
-                viewportFraction: 0.8,
-                items: [
-                  Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10.0),
-                      image: const DecorationImage(
-                        image: AssetImage('assets/laptop.jpg'),
-                      ),
+                Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10.0),
+                    image: const DecorationImage(
+                      image: AssetImage('assets/watch.jpg'),
                     ),
                   ),
-                  Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10.0),
-                      image: const DecorationImage(
-                        image: AssetImage('assets/watch.jpg'),
-                      ),
+                ),
+                Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10.0),
+                    image: const DecorationImage(
+                      image: AssetImage('assets/watch1.jpg'),
                     ),
                   ),
-                  Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10.0),
-                      image: const DecorationImage(
-                        image: AssetImage('assets/watch1.jpg'),
-                      ),
-                    ),
-                  )
-                ],
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              Container(
-                padding: const EdgeInsets.all(5),
-                child: const Align(
-                    alignment: Alignment.topLeft, child: Text('Variants')),
-              ),
-              Row(
-                children: [
-                  IconButton(
-                      onPressed: () {},
-                      iconSize: 100,
-                      icon: Image.asset('assets/watch1.jpg')),
-                  IconButton(
-                      onPressed: () {},
-                      iconSize: 100,
-                      icon: Image.asset('assets/watch1.jpg')),
-                  IconButton(
-                      onPressed: () {},
-                      iconSize: 100,
-                      icon: Image.asset('assets/laptop.jpg')),
-                ],
-              ),
-              SizedBox(
-                height: 10,
-              ),
+                )
+              ],
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            Container(
+              padding: const EdgeInsets.all(5),
+              child: const Align(
+                  alignment: Alignment.topLeft, child: Text('Variants')),
+            ),
+            Row(
+              children: [
+                IconButton(
+                    onPressed: () {},
+                    iconSize: 100,
+                    icon: Image.asset('assets/watch1.jpg')),
+                IconButton(
+                    onPressed: () {},
+                    iconSize: 100,
+                    icon: Image.asset('assets/watch1.jpg')),
+                IconButton(
+                    onPressed: () {},
+                    iconSize: 100,
+                    icon: Image.asset('assets/laptop.jpg')),
+              ],
+            ),
+           const SizedBox(
+              height: 10,
+            ),
 
-            ],
-          ),
-
+          ],
         ),
+
       ),
 
       bottomNavigationBar: BottomNavigationBar(
