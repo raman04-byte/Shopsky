@@ -1,22 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
-class MyForget extends StatefulWidget {
-  const MyForget({Key? key}) : super(key: key);
+class MyOtp extends StatefulWidget {
+  const MyOtp({Key? key}) : super(key: key);
 
   @override
-  State<MyForget> createState() => _MyForgetState();
+  State<MyOtp> createState() => _MyOtpState();
 }
 
-class _MyForgetState extends State<MyForget> {
+class _MyOtpState extends State<MyOtp> {
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: const BoxDecoration(
           image: DecorationImage(
-        image: AssetImage('assets/login.png'), //height : 300, width : 150
-        fit: BoxFit.cover,
-      )),
+            image: AssetImage('assets/login.png'), //height : 300, width : 150
+            fit: BoxFit.cover,
+          )),
       child: Scaffold(
           backgroundColor: Colors.transparent,
           body: Stack(
@@ -24,7 +24,7 @@ class _MyForgetState extends State<MyForget> {
               Container(
                 padding: const EdgeInsets.only(left: 35, top: 130),
                 child: const Text(
-                  'Enter your number',
+                  'Enter OTP',
                   style: TextStyle(color: Colors.white, fontSize: 33),
                 ),
               ),
@@ -40,56 +40,22 @@ class _MyForgetState extends State<MyForget> {
                           decoration: InputDecoration(
                               fillColor: Colors.grey.shade100,
                               filled: true,
-                              hintText: 'Phone Number',
+                              hintText: 'Your OTP here',
                               border: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(10)))),
                       const SizedBox(
                         height: 40,
                       ),
-                      Column(
-                        children: [
-                          TextButton(
-                              onPressed: (
-                                  ) {
-                                Fluttertoast.showToast(
-                                  msg: 'OTP sent',
-                                  toastLength: Toast.LENGTH_SHORT,
-                                  timeInSecForIosWeb: 1,
-                                  backgroundColor: Colors.white,
-                                  textColor: Colors.black,
-                                  fontSize: 16.0,
-                                );
-                              },
-                              child: const Text(
-                                'Send OTP',
-                                style: TextStyle(
-                                  decoration: TextDecoration.underline,
-                                  fontSize: 18,
-                                  color: Color(0xff4c505b),
-                                ))),
-                        ],
-                      ),
                       const SizedBox(
                         height: 50,
                       ),
-                      Row(
+                      Column(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
+
                           TextButton(
                               onPressed: () {
-                                Navigator.pushNamed(context, 'register');
-                              },
-                              child: const Text(
-                                'Sign UP',
-                                style: TextStyle(
-                                  decoration: TextDecoration.underline,
-                                  fontSize: 18,
-                                  color: Color(0xff4c505b),
-                                ),
-                              )),
-                          TextButton(
-                              onPressed: () {
-                                Navigator.pushNamed(context, 'otp');
+                                Navigator.pushNamed(context, 'product');
                               },
                               child: const Text(
                                 'Enter OTP',
