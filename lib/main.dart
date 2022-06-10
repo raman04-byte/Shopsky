@@ -11,7 +11,7 @@ import 'package:shopsky/forget.dart';
 void main() {
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
-    initialRoute: 'product',
+    initialRoute: 'forget',
     routes: {
       'splash':(context)=>const MySplash(),
       'login' : (context)=>const MyLogin(),
