@@ -39,7 +39,7 @@ class _MyLoginState extends State<MyLogin> {
                           decoration: InputDecoration(
                               fillColor: Colors.grey.shade100,
                               filled: true,
-                              hintText: 'Email',
+                              hintText: 'Email or Mobile number',
                               border: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(10)))),
                       const SizedBox(
