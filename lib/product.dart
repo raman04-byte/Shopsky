@@ -295,7 +295,36 @@ class _MyProductState extends State<MyProduct> {
             ),
             Container(
               padding: const EdgeInsets.only(left: 4, right: 2),
-            )
+              child: Column (
+                children: [
+                  IconButton(
+                    onPressed: (){},
+                    color: Colors.black,padding: new EdgeInsets.all(0.0),
+
+                      iconSize: 100,
+                      splashColor: Colors.blue,
+                      hoverColor: Colors.blue[100],
+                    icon : const Text('Add to Cart')
+
+                  ),
+                  const SizedBox(
+                    height: 15,
+                  ),
+                  IconButton(onPressed: (){},
+                      color : Colors.black,
+                    padding: new EdgeInsets.all(0.0),
+
+                    iconSize: 100,
+                    splashColor: Colors.blue,
+                    hoverColor: Colors.blue[100],
+                      icon :const Text('Buy Now'),
+                  )
+                ],
+                ),
+            ),
+            const SizedBox(
+              height: 5,
+            ),
           ],
         ),
       ),
