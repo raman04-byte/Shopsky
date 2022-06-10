@@ -10,6 +10,9 @@ class MyProduct extends StatefulWidget {
 }
 
 class _MyProductState extends State<MyProduct> {
+
+  final isDialOpen = ValueNotifier(false);
+
   int _selectedIndex = 0;
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
@@ -41,12 +44,15 @@ class _MyProductState extends State<MyProduct> {
          icon: Icons.share,
           overlayColor: Colors.black26,
           overlayOpacity: 0.8,
+          spaceBetweenChildren: 5,
+          closeManually: true,
+          openCloseDial: isDialOpen,
           children: [
             SpeedDialChild(
               backgroundColor: Colors.yellow,
               child: Icon(Icons.mail),
               label: 'Mail',
-              onTap: ()=> ,
+              // onTap: ()=> ,
             ),
             SpeedDialChild(
               backgroundColor: Colors.green,
