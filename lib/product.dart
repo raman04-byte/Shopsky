@@ -46,6 +46,7 @@ class _MyProductState extends State<MyProduct> {
         overlayOpacity: 0.8,
         spaceBetweenChildren: 5,
         closeManually: true,
+
         openCloseDial: isDialOpen,
         children: [
           SpeedDialChild(

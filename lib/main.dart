@@ -7,6 +7,7 @@ import 'package:shopsky/register.dart';
 import 'package:shopsky/splash.dart';
 import 'package:shopsky/favorite.dart';
 import 'package:shopsky/product.dart';
+import 'package:shopsky/forget.dart';
 void main() {
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
@@ -18,6 +19,7 @@ void main() {
       'cart':(context)=> const MyCart(),
       'favorite':(context)=>const MyFav(),
       'product':(context)=>const MyProduct(),
+      'forget':(context)=>const MyForget(),
     },
   ));
 }
