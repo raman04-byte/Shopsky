@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-
+import 'package:flutter_speed_dial/flutter_speed_dial.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 class MyProduct extends StatefulWidget {
   const MyProduct({Key? key}) : super(key: key);
 
@@ -36,6 +37,44 @@ class _MyProductState extends State<MyProduct> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: SpeedDial(
+         icon: Icons.share,
+          overlayColor: Colors.black26,
+          overlayOpacity: 0.8,
+          children: [
+            SpeedDialChild(
+              backgroundColor: Colors.yellow,
+              child: Icon(Icons.mail),
+              label: 'Mail',
+              onTap: ()=> ,
+            ),
+            SpeedDialChild(
+              backgroundColor: Colors.green,
+              child: Icon(Icons.whatsapp),
+              label: 'Whatsapp'
+            ),
+            SpeedDialChild(
+              backgroundColor: Colors.blue,
+              child: Icon(Icons.facebook),
+              label: 'Facebook'
+            ),
+            SpeedDialChild(
+              backgroundColor: Colors.pinkAccent,
+              child: Icon(Icons.interests_rounded),
+              label: 'Instagram'
+            ),
+            SpeedDialChild(
+              backgroundColor: Colors.blue,
+              child:Icon(Icons.temple_buddhist_rounded),
+              label: 'Twitter'
+            ),
+            SpeedDialChild(
+              backgroundColor: Colors.blue,
+              child: Icon(Icons.telegram),
+              label: 'Telegram'
+            )
+          ],
+      ),
       appBar: AppBar(
         backgroundColor: Colors.blue,
         shadowColor: Colors.blue,
@@ -191,8 +230,10 @@ class _MyProductState extends State<MyProduct> {
             ),
             Container(
               padding: const EdgeInsets.only(left: 4, right: 2),
+
             )
           ],
+
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
@@ -216,7 +257,13 @@ class _MyProductState extends State<MyProduct> {
         selectedItemColor: Colors.blue,
       ),
     );
+Future showToast(String message) async{
+  await Fluttertoast.cancel();
+
+  Fluttertoast.showToast(msg: message, fontSize: 18);
+}
   }
+
 }
 
 class DataSearch extends SearchDelegate {
