@@ -172,6 +172,28 @@ class _MyProductState extends State<MyProduct> {
               height: 10,
             ),
 
+            Container(
+              padding: const EdgeInsets.only(left: 4, right: 2),
+              child: Row(
+                children: const[
+                  Text('Prize of the product'),
+                ],
+              ),
+
+            ),
+            const SizedBox(
+              height: 5,
+            ),
+            Container(
+              padding: const EdgeInsets.only(left: 4, right: 2),
+              child: Row(
+                children: const[
+                  Text('EMI if possible'),
+                ],
+              ),
+
+            ),
+
           ],
         ),
 
