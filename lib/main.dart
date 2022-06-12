@@ -2,6 +2,7 @@ import 'dart:js';
 
 import 'package:flutter/material.dart';
 import 'package:shopsky/cartscreen.dart';
+import 'package:shopsky/home.dart';
 import 'package:shopsky/login.dart';
 import 'package:shopsky/otp.dart';
 import 'package:shopsky/register.dart';
@@ -13,7 +14,7 @@ import 'package:shopsky/forget.dart';
 void main() {
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
-    initialRoute: 'forget',
+    initialRoute: 'home',
     routes: {
       'splash':(context)=>const MySplash(),
       'login' : (context)=>const MyLogin(),
@@ -23,6 +24,7 @@ void main() {
       'product':(context)=>const MyProduct(),
       'forget':(context)=>const MyForget(),
       'otp':(context)=>const MyOtp(),
+      'home':(context)=>const MyHome(),
     },
   ));
 }

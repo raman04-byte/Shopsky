@@ -8,10 +8,14 @@ class MyCart extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Column(
-          children: [Text('Your cart', style: TextStyle(color: Colors.black),
-          ),
-            Text('0 items',
-            style: Theme.of(context).textTheme.caption,
+          children: [
+            const Text(
+              'Your cart',
+              style: TextStyle(color: Colors.black),
+            ),
+            Text(
+              '0 items',
+              style: Theme.of(context).textTheme.caption,
             )
           ],
         ),

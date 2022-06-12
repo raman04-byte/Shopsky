@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 
 class MyOtp extends StatefulWidget {
   const MyOtp({Key? key}) : super(key: key);
@@ -55,10 +54,10 @@ class _MyOtpState extends State<MyOtp> {
 
                           TextButton(
                               onPressed: () {
-                                Navigator.pushNamed(context, 'product');
+                                Navigator.pushNamed(context, 'login');
                               },
                               child: const Text(
-                                'Enter OTP',
+                                'Sign In',
                                 style: TextStyle(
                                   decoration: TextDecoration.underline,
                                   fontSize: 18,
