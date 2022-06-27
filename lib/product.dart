@@ -169,7 +169,7 @@ class _MyProductState extends State<MyProduct> {
               decoration: BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage(
-                    'assets/shopsky.png', //height : 30, width: 50
+                    'assets/logo.png', //height : 30, width: 50
                   ),
                 ),
                 color: Colors.blue,
@@ -204,6 +204,7 @@ class _MyProductState extends State<MyProduct> {
           children: [
             Container(
               padding: const EdgeInsets.only(left: 4, right: 2),
+              alignment: Alignment.center,
               child: (const Text('Description of the product')),
             ),
             const SizedBox(
@@ -313,7 +314,7 @@ class _MyProductState extends State<MyProduct> {
                   ),
                   IconButton(onPressed: (){},
                       color : Colors.black,
-                    padding: new EdgeInsets.all(0.0),
+                    padding: const EdgeInsets.all(0.0),
 
                     iconSize: 100,
                     splashColor: Colors.blue,

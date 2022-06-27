@@ -8,6 +8,26 @@ class MyHome extends StatefulWidget {
 }
 
 class _MyHomeState extends State<MyHome> {
+
+  Container MyPro(String imageVal,String heading){
+    return Container(
+      width: 100,
+      child: Card(
+        child: Wrap(
+          children: <Widget>[
+            Image.network(imageVal),
+            ListTile(title: Text(heading),),
+          ],
+        ),
+      ),
+    );
+  }
+
+  final isDialOpen = ValueNotifier(false);
+  final int _selectedIndex = 0;
+  static const TextStyle optionStyle =
+      TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,54 +50,115 @@ class _MyHomeState extends State<MyHome> {
               iconSize: 35,
               icon: const Icon(Icons.shopping_cart))
         ],
-      ),drawer: Drawer(
-      child: ListView(
-        padding: EdgeInsets.zero,
-        children: [
-          const DrawerHeader(
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage(
-                  'assets/shopsky.png', //height : 30, width: 50
+      ),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            const DrawerHeader(
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage(
+                    'assets/logo.png', //height : 30, width: 50
+                  ),
                 ),
+                color: Colors.blue,
               ),
-              color: Colors.blue,
+              child: Text('Shopsky'),
             ),
-            child: Text('Shopsky'),
+            ListTile(
+              title: const Text('My Account'),
+              leading: const Icon(Icons.account_circle_rounded),
+              onTap: () {},
+            ),
+            ListTile(
+              title: const Text('My Order'),
+              onTap: () {},
+              leading: const Icon(Icons.bookmark_border),
+            ),
+            ListTile(
+              title: const Text('My cart'),
+              onTap: () {},
+              leading: const Icon(Icons.shopping_cart),
+            ),
+            ListTile(
+              title: const Text('Settings'),
+              onTap: () {},
+              leading: const Icon(Icons.settings),
+            )
+          ],
+        ),
+      ),
+      body: SingleChildScrollView(
+         child: Column(
+           children: [
+             Container(
+               margin: const EdgeInsets.symmetric(vertical: 20.0),
+               height: 100,
+               child: ListView(
+             scrollDirection: Axis.horizontal,
+                 children: <Widget>[
+                   MyPro("https://images.unsplash.com/profile-1446404465118-3a53b909cc82?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&cs=tinysrgb&fit=crop&h=32&w=32&s=a2f8c40e39b8dfee1534eb32acfa6bc7","heading"),
+                   MyPro("https://images.unsplash.com/profile-1446404465118-3a53b909cc82?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&cs=tinysrgb&fit=crop&h=32&w=32&s=a2f8c40e39b8dfee1534eb32acfa6bc7","heading"),
+                   MyPro("https://images.unsplash.com/profile-1446404465118-3a53b909cc82?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&cs=tinysrgb&fit=crop&h=32&w=32&s=a2f8c40e39b8dfee1534eb32acfa6bc7","heading"),
+                   MyPro("https://images.unsplash.com/profile-1446404465118-3a53b909cc82?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&cs=tinysrgb&fit=crop&h=32&w=32&s=a2f8c40e39b8dfee1534eb32acfa6bc7","heading"),
+                   MyPro("https://images.unsplash.com/profile-1446404465118-3a53b909cc82?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&cs=tinysrgb&fit=crop&h=32&w=32&s=a2f8c40e39b8dfee1534eb32acfa6bc7","heading"),
+                 ],
+               ),
+
+             )
+
+           ],
+         ),
+
+       // )
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+              icon: Icon(Icons.shopping_cart),
+              label: 'Cart',
+              backgroundColor: Colors.blue),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
+            backgroundColor: Colors.blue,
           ),
-          ListTile(
-            title: const Text('My Account'),
-            leading: const Icon(Icons.account_circle_rounded),
-            onTap: () {},
-          ),
-          ListTile(
-            title: const Text('My Order'),
-            onTap: () {},
-            leading: const Icon(Icons.bookmark_border),
-          ),
-          ListTile(
-            title: const Text('My cart'),
-            onTap: () {},
-            leading: const Icon(Icons.shopping_cart),
-          ),
-          ListTile(
-            title: const Text('Settings'),
-            onTap: () {},
-            leading: const Icon(Icons.settings),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.bookmark_border),
+            label: 'Order',
+            backgroundColor: Colors.blue,
           )
         ],
+        currentIndex: _selectedIndex,
+        selectedItemColor: Colors.blue,
       ),
-    ),
-      body: SingleChildScrollView(
-       child: Column(
-         children: [
-
-         ],
-       ),
-      ),
-      );
+    );
   }
 }
+
+Widget buildCard() => Container(
+    width: 85,
+    height: 85,
+    color: Colors.transparent,
+    child: Column(
+      children: [
+        Image.asset(
+          'assets/watch.jpg',
+          height: 80,
+        ),
+        const SizedBox(height: 4),
+        const Text(
+          'Watch XYZ',
+          style: TextStyle(
+            fontSize: 10,
+          ),
+        ),
+      ],
+
+      // Image.asset('assets/watch.jpg'),
+    ));
+
 class DataSearch extends SearchDelegate {
   final List<String> searchTerms = [
     'Laptops',

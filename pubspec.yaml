@@ -15,10 +15,15 @@ dependencies:
   persistent_bottom_nav_bar: any
   carousel_pro: ^1.0.0
   carousel_slider: ^1.3.0
+  firebase_core: ^1.17.1
+  firebase_auth: ^3.3.19
+  cloud_firestore: ^3.1.17
 flutter_svg: ^0.17.4
 curved_navigation_bar: ^1.0.3
 cupertino_icons: ^1.0.2
-
+firebase_core: ^1.6.0
+firebase_auth: ^3.1.0
+cloud_firestore: ^2.5.1
 dev_dependencies:
   flutter_test:
     sdk: flutter
