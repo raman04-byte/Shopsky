@@ -8,15 +8,18 @@ class MyHome extends StatefulWidget {
 }
 
 class _MyHomeState extends State<MyHome> {
-
-  Container MyPro(String imageVal,String heading){
+  Container MyPro(String imageVal, String heading) {
     return Container(
       width: 100,
       child: Card(
         child: Wrap(
           children: <Widget>[
-            Image.network(imageVal),
-            ListTile(title: Text(heading),),
+            // ElevatedButton.icon(onPressed: (){},icon: Image.network(imageVal),label: Text(heading),),
+            IconButton(
+              onPressed: () {},
+              iconSize: 85,
+              icon: Image.network(imageVal),
+            )
           ],
         ),
       ),
@@ -25,8 +28,6 @@ class _MyHomeState extends State<MyHome> {
 
   final isDialOpen = ValueNotifier(false);
   final int _selectedIndex = 0;
-  static const TextStyle optionStyle =
-      TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
 
   @override
   Widget build(BuildContext context) {
@@ -90,28 +91,137 @@ class _MyHomeState extends State<MyHome> {
         ),
       ),
       body: SingleChildScrollView(
-         child: Column(
-           children: [
-             Container(
-               margin: const EdgeInsets.symmetric(vertical: 20.0),
-               height: 100,
-               child: ListView(
-             scrollDirection: Axis.horizontal,
-                 children: <Widget>[
-                   MyPro("https://images.unsplash.com/profile-1446404465118-3a53b909cc82?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&cs=tinysrgb&fit=crop&h=32&w=32&s=a2f8c40e39b8dfee1534eb32acfa6bc7","heading"),
-                   MyPro("https://images.unsplash.com/profile-1446404465118-3a53b909cc82?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&cs=tinysrgb&fit=crop&h=32&w=32&s=a2f8c40e39b8dfee1534eb32acfa6bc7","heading"),
-                   MyPro("https://images.unsplash.com/profile-1446404465118-3a53b909cc82?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&cs=tinysrgb&fit=crop&h=32&w=32&s=a2f8c40e39b8dfee1534eb32acfa6bc7","heading"),
-                   MyPro("https://images.unsplash.com/profile-1446404465118-3a53b909cc82?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&cs=tinysrgb&fit=crop&h=32&w=32&s=a2f8c40e39b8dfee1534eb32acfa6bc7","heading"),
-                   MyPro("https://images.unsplash.com/profile-1446404465118-3a53b909cc82?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&cs=tinysrgb&fit=crop&h=32&w=32&s=a2f8c40e39b8dfee1534eb32acfa6bc7","heading"),
-                 ],
-               ),
+        child: Column(
+          children: [
+            Container(
+              margin: const EdgeInsets.symmetric(vertical: 20.0),
+              height: 95,
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                children: <Widget>[
+                  MyPro(
+                      "https://images.unsplash.com/profile-1446404465118-3a53b909cc82?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&cs=tinysrgb&fit=crop&h=32&w=32&s=a2f8c40e39b8dfee1534eb32acfa6bc7",
+                      "heading"),
+                  MyPro(
+                      "https://images.unsplash.com/profile-1446404465118-3a53b909cc82?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&cs=tinysrgb&fit=crop&h=32&w=32&s=a2f8c40e39b8dfee1534eb32acfa6bc7",
+                      "heading"),
+                  MyPro(
+                      "https://images.unsplash.com/profile-1446404465118-3a53b909cc82?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&cs=tinysrgb&fit=crop&h=32&w=32&s=a2f8c40e39b8dfee1534eb32acfa6bc7",
+                      "heading"),
+                  MyPro(
+                      "https://images.unsplash.com/profile-1446404465118-3a53b909cc82?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&cs=tinysrgb&fit=crop&h=32&w=32&s=a2f8c40e39b8dfee1534eb32acfa6bc7",
+                      "heading"),
+                  MyPro(
+                      "https://images.unsplash.com/profile-1446404465118-3a53b909cc82?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&cs=tinysrgb&fit=crop&h=32&w=32&s=a2f8c40e39b8dfee1534eb32acfa6bc7",
+                      "heading"),
+                ],
+              ),
+            ),
+            SizedBox(
+              width: MediaQuery.of(context).size.width,
+              height: 5,
+              child: const DecoratedBox(
+                  decoration: BoxDecoration(
+                color: Colors.grey,
+              )),
+            ),
+            Container(
+              height: 120,
+              width: MediaQuery.of(context).size.width,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  image: const DecorationImage(
+                      image: AssetImage('assets/watch.jpg'),
+                      fit: BoxFit.fitHeight)),
+            ),
+            SizedBox(
+              width: MediaQuery.of(context).size.width,
+              height: 5,
+              child: const DecoratedBox(
+                  decoration: BoxDecoration(
+                    color: Colors.grey,
+                  )),
+            ),
+            // Container(
+            Container(
+              // margin: const EdgeInsets.symmetric(vertical: 20.0),
+              height: 95,
+              width: MediaQuery.of(context).size.width,
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                children: <Widget>[
+                  MyPro("assets/laptop.jpg", "heading"),
+                  MyPro("assets/laptop.jpg", "heading"),
+                ],
+              ),
+            ), SizedBox(
+              width: MediaQuery.of(context).size.width,
+              height: 5,
+              child: const DecoratedBox(
+                  decoration: BoxDecoration(
+                    color: Colors.grey,
+                  )),
+            ),
+            Container(
+              // margin: const EdgeInsets.symmetric(vertical: 20.0),
+              height: 95,
+              width: MediaQuery.of(context).size.width,
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                children: <Widget>[
+                  MyPro("assets/laptop.jpg", "heading"),
+                  MyPro("assets/laptop.jpg", "heading"),
+                ],
+              ),
+            ), SizedBox(
+              width: MediaQuery.of(context).size.width,
+              height: 5,
+              child: const DecoratedBox(
+                  decoration: BoxDecoration(
+                    color: Colors.grey,
+                  )),
+            ),
+            Container(
+              // margin: const EdgeInsets.symmetric(vertical: 20.0),
+              height: 95,
+              width: MediaQuery.of(context).size.width,
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                children: <Widget>[
+                  MyPro("assets/laptop.jpg", "heading"),
+                  MyPro("assets/laptop.jpg", "heading"),
+                ],
+              ),
+            ), SizedBox(
+              width: MediaQuery.of(context).size.width,
+              height: 5,
+              child: const DecoratedBox(
+                  decoration: BoxDecoration(
+                    color: Colors.grey,
+                  )),
+            ),Container(
+              // margin: const EdgeInsets.symmetric(vertical: 20.0),
+              height: 95,
+              width: MediaQuery.of(context).size.width,
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                children: <Widget>[
+                  MyPro("assets/laptop.jpg", "heading"),
+                  MyPro("assets/laptop.jpg", "heading"),
+                ],
+              ),
+            ), SizedBox(
+              width: MediaQuery.of(context).size.width,
+              height: 5,
+              child: const DecoratedBox(
+                  decoration: BoxDecoration(
+                    color: Colors.grey,
+                  )),
+            ),
+          ],
+        ),
 
-             )
-
-           ],
-         ),
-
-       // )
+        // )
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
@@ -155,8 +265,6 @@ Widget buildCard() => Container(
           ),
         ),
       ],
-
-      // Image.asset('assets/watch.jpg'),
     ));
 
 class DataSearch extends SearchDelegate {
